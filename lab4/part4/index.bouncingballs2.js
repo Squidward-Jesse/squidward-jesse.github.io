@@ -1,5 +1,8 @@
 // setup canvas
 
+const para = document.querySelector('p');
+let count = 0;
+
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -30,6 +33,7 @@ class Shape
 
 class Ball extends Shape
 {constructor(x, y, velX, velY, color, size) {
+    super(x, y, velX, velY)
     this.x = x;
     this.y = y;
     this.velX = velX;
@@ -136,7 +140,7 @@ collisionDetect() {
         if (distance < this.size + ball.size) {
             ball.exists = false;
             count--;
-            parseFloat.textContent = 'Ball count: ' + count;
+            para.textContent = 'Ball count: ' + count;
         }
       }
     }
@@ -160,6 +164,7 @@ while (balls.length < 25) {
     );
 
     balls.push(ball);
+    count++;
     para.textContent = 'Ball count: ' + count;
 }
 
@@ -170,12 +175,14 @@ function loop() {
     ctx.fillRect(0, 0, width, height);
 
     for (const ball of balls) {
+    if (ball.exists){
     ball.draw();
     ball.update();
     ball.collisionDetect();
     }
+    }
     evilBall.draw();
-    evilBall.update();
+    evilBall.checkBounds();
     evilBall.collisionDetect();
     requestAnimationFrame(loop);
 }
