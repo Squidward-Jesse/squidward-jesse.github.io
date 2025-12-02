@@ -106,3 +106,11 @@ button:focus {
     background-color: #eeeeee;
     cursor: pointer;
 }
+
+form {
+    background: url("./images/forest.jpg")
+    no-repeat;
+    margin-top: 20px;
+    padding-top: 50px;
+    background-size: 1000px;
+}
