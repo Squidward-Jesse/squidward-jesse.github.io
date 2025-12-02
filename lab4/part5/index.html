@@ -23,8 +23,8 @@
     </p>
 
     --
-
-    Facilities
+    <div class="facilities">
+    <h2>Facilities</h2>
 
     Was the porridge
     <input
@@ -97,41 +97,55 @@
       name="majestic"
       value"majestic"
       checked /><label for="majestic">Majestic</label>
-
+    </div>
     --
+    <div class="about">
+    <h2>About your hosts</h2>
 
-    About your hosts
+    <label for="favorite">Who's your favorite bear?</label>
+    <select name="favorite" id="favourite>
+        <option value="papa">Papa bear</option>
+        <option value="mama">Mama bear</option>
+        <option value="junior">Junior</option>
+        <option value="dozer">Dozer</option>
+    </select>
 
-    Who's your favorite bear?
-    Papa bear
-    Mama bear
-    Junior
-    Dozer
+    <label for="greeting">Which greeting did you prefer?</label>
+    <select name="greeting" id="greeting>
+        <option value="papa">Wave</options>
+        <option value="mama">Friendly greeting</option>
+        <option value="junior">Growl</option>
+        <option value="dozer">Claw marks in the door</option>
+    </select>
+    </div>
+    
+    <div class="feedback">
+    <h2>Any other feedback?</h2>
 
-    Which greeting did you prefer?
-    Wave
-    Friendly greeting
-    Growl
-    Claw marks in the door
-
-    --
-
-    Any other feedback?
-
-    Give us your comments
-
-    --
-
-    Your details
-
-    Name
-    Email
-    Phone
-
-    --
-
-    Submit
-
-    --
+    <label for="comments">Give us your comments</label>
+    <br />
+    <textarea id="comments" name="comments"></textarea>
+    </div>
+    
+    <div class="details">
+    <h2>Your details</h2>
+        <div class="name">
+    	<label for="name">Name</label>
+	<input type="text" id ="name" name="name" />
+	</div>
+	<div class="email">
+    	<label for="email">Email</label>
+	<input type="email" id ="email" name="email" />
+	</div>
+    	<div class="phone">
+	<label for="phone">Phone</label>
+	<input type="tel" id ="phone" name="phone" />
+	</div>
+    </div>
+    
+    <div class="submit">
+    <button>Submit</button>
+    </div>
+    
   </body>
 </html>
