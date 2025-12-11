@@ -23,6 +23,28 @@ const nameField = document.querySelector('#name');
 const commentField = document.querySelector('#comment');
 const list = document.querySelector('.comment-container');
 
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.getElementById('toggle-comments');
+  const commentWrapper = document.getElementById('comment-wrapper');
+
+  if (!toggleButton || !commentWrapper) return;
+
+  commentWrapper.hidden = true;
+  toggleButton.setAttribute('aria-expanded', 'false');
+  toggleButton.textContent = 'Show comments';
+
+  function toggleComments() {
+    const expanded = toggleButton.getAttribute('aria-expanded') === 'true';
+    const next = !expanded;
+
+    toggleButton.setAttribute('aria-expanded', String(next));
+    commentWrapper.hidden = !next;
+    toggleButton.textContent = next ? 'Hide comments' : 'Show comments';
+  }
+
+  toggleButton.addEventListener('click', toggleComments, { passive: true});
+})
+
 form.onsubmit = function(e) {
   e.preventDefault();
   submitComment();
